@@ -7,19 +7,39 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController {
 
+    var webView = UIWebView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
+    func setupUI() {
+        
+        webView.bounds = self.view.bounds
+        
+        let urlRequest = URL(string: "https://www.google.com")!
+        
+        Alamofire.request(urlRequest).responseData { response in
+            
+            if let data = response.data, let request = response.request?.url {
+                self.webView.load(data, mimeType: response.response?.mimeType ?? "", textEncodingName: response.response?.textEncodingName ?? "", baseURL: request)
+                
+                self.view.addSubview(self.webView)
+                
+            }
+            
+        }
+        
+    }
+    
 
 }
 
