@@ -12,6 +12,7 @@
 		ACF6820B201954F30018137B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACF68209201954F30018137B /* Main.storyboard */; };
 		ACF6820D201954F30018137B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACF6820C201954F30018137B /* Assets.xcassets */; };
 		ACF68210201954F30018137B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACF6820E201954F30018137B /* LaunchScreen.storyboard */; };
+		ACF682192019587E0018137B /* googleCert.cer in Resources */ = {isa = PBXBuildFile; fileRef = ACF682182019587E0018137B /* googleCert.cer */; };
 		BE0051C808F2C7C11CF50FCF /* Pods_SSLPinning.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2708679A1D10B1D81641016D /* Pods_SSLPinning.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 		ACF6820C201954F30018137B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACF6820F201954F30018137B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACF68211201954F30018137B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACF682182019587E0018137B /* googleCert.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = googleCert.cer; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 		ACF68204201954F30018137B /* SSLPinning */ = {
 			isa = PBXGroup;
 			children = (
+				ACF68217201958590018137B /* Resources */,
 				ACF68205201954F30018137B /* AppDelegate.swift */,
 				ACF68207201954F30018137B /* ViewController.swift */,
 				ACF68209201954F30018137B /* Main.storyboard */,
@@ -78,6 +81,14 @@
 				ACF68211201954F30018137B /* Info.plist */,
 			);
 			path = SSLPinning;
+			sourceTree = "<group>";
+		};
+		ACF68217201958590018137B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				ACF682182019587E0018137B /* googleCert.cer */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		E18CF901D40DD019AAD96BE7 /* Frameworks */ = {
@@ -151,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACF68210201954F30018137B /* LaunchScreen.storyboard in Resources */,
+				ACF682192019587E0018137B /* googleCert.cer in Resources */,
 				ACF6820D201954F30018137B /* Assets.xcassets in Resources */,
 				ACF6820B201954F30018137B /* Main.storyboard in Resources */,
 			);
