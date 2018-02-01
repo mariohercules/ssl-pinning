@@ -13,6 +13,8 @@ class ViewController: UIViewController {
 
     var webView = UIWebView()
     
+    private var session:SessionManager?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -21,6 +23,21 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
+    func applayPinningSecurity() {
+        
+        let certificates: [SecCertificate] = []
+        let trustPolicy = ServerTrustPolicy.pinCertificates(
+            certificates: certificates,
+            validateCertificateChain: true,
+            validateHost: true)
+        let trustPolicies = [ "www.google.com": trustPolicy ]
+        let policyManager =  ServerTrustPolicyManager(policies: trustPolicies)
+        session = SessionManager(
+            configuration: .default,
+            serverTrustPolicyManager: policyManager)
+        
+    }
+    
     func setupUI() {
         
         webView.bounds = self.view.bounds
