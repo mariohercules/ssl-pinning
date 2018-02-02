@@ -38,6 +38,26 @@ class ViewController: UIViewController {
         
     }
     
+    func configureAlamoFireSSLPinning() {
+        let pathToCert = NSBundle.mainBundle().pathForResource(githubCert, ofType: "cer")
+        let localCertificate:NSData = NSData(contentsOfFile: pathToCert!)!
+        
+        self.serverTrustPolicy = ServerTrustPolicy.PinCertificates(
+            certificates: [SecCertificateCreateWithData(nil, localCertificate)!],
+            validateCertificateChain: true,
+            validateHost: true
+        )
+        
+        self.serverTrustPolicies = [
+            "www.google.com": self.serverTrustPolicy!
+        ]
+        
+        self.afManager = Manager(
+            configuration: NSURLSessionConfiguration.defaultSessionConfiguration(),
+            serverTrustPolicyManager: ServerTrustPolicyManager(policies: self.serverTrustPolicies)
+        )
+    }
+    
     func setupUI() {
         
         webView.bounds = self.view.bounds
