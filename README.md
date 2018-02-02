@@ -2,7 +2,7 @@
 ## SSL Pinning with iOS demoing
 
 
-* Generate certificate from host
+* Generate the certificate from host
 
 ```bash
 
